@@ -28,7 +28,10 @@ const PrepositionTest = () => {
 
   const handleCheck = (index) => {
     const newInputBgColors = [...inputBgColors];
-    if (inputValues[index] === data[index].präposition) {
+    // Convert both input value and correct preposition to lowercase for case-insensitive comparison
+    if (
+      inputValues[index].toLowerCase() === data[index].präposition.toLowerCase()
+    ) {
       newInputBgColors[index] = "bg-green-500";
     } else {
       newInputBgColors[index] = "bg-red-500";
@@ -44,14 +47,14 @@ const PrepositionTest = () => {
 
   return (
     <div>
-      <div className=" text-white grid place-items-center">
+      <div className="text-white grid place-items-center">
         <div>
           {data.map((i, index) => {
             const result = getAfterSpace(i.verben);
             return (
               <div
                 key={index}
-                className="flex gap-2 px-5 mb-5 justify-between shadow-md shadow-violet-700 bg-[#323131] p-2 flex-wrap max-w-[1000px]  ml-12 items-center min-w-[800px] max-md:min-w-[400px]"
+                className="flex gap-2 px-5 mb-5 justify-between shadow-md shadow-violet-700 bg-[#323131] p-2 flex-wrap max-w-[1000px] items-center min-w-[800px] max-md:min-w-[400px]"
               >
                 <div className="flex justify-between items-center gap-2">
                   {i.reflexiv && (
@@ -66,7 +69,7 @@ const PrepositionTest = () => {
                     id={`fb-${index}`}
                     value={inputValues[index]}
                     onChange={(e) => handleInputChange(index, e.target.value)}
-                    className={`p-1 text-black border border-zinc-400 rounded-md w-12 outline-none ${inputBgColors[index]}`}
+                    className={`font-semibold p-1 text-black border border-zinc-400 rounded-md w-12 outline-none ${inputBgColors[index]}`}
                     type="text"
                   />
                   <button

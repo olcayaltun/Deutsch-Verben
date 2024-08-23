@@ -3,8 +3,8 @@ import PrepositionTest from "./PrepositionTest"; // Dosya adı PrepositionTest.j
 
 function App() {
   return (
-    <div className=" mt-4 ">
-      <h1 className=" text-white text-4xl grid place-items-center font-semibold mb-7 bg-slate-600 p-2  rounded-tl-[40px] rounded-br-[40px]">
+    <div className=" mt-4">
+      <h1 className=" text-white text-4xl grid place-items-center font-semibold mb-7 bg-slate-600 p-2  rounded-tl-[40px] rounded-br-[40px] max-md:w-[450px] ml-4">
         Verben mit Präpositionen
       </h1>
       <PrepositionTest />
